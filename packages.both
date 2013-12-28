@@ -1,4 +1,4 @@
-# Intallation
+# Installation
 arch-install-scripts
 refind-efi
 haveged
@@ -25,14 +25,17 @@ screen
 mlocate
 wgetpaste
 mutt
-#canto in aur but its a nice console based rss reader
+canto
 mc
 ranger
 openssl
 arch-wiki-lite
+colordiff
+moreutils
+pwgen
 
-# BlackArch
-blackarch
+# ArchAssault
+archassault
 aircrack-ng
 gnu-netcat
 nmap
@@ -75,7 +78,6 @@ zsh
 base-devel
 python
 python2
-#pyparted if we want to use it we will need to add it to the repo
 python2-geoip
 python2-pyqt4
 git
@@ -84,6 +86,7 @@ cmake
 emacs
 gvim
 vim
+scite
 geany
 geany-plugins
 
@@ -163,6 +166,7 @@ surf
 lftp
 ncftp
 tcpdump
+rdesktop
 
 # Media plugins
 gstreamer0.10-plugins
@@ -206,6 +210,9 @@ abiword
 zim
 antiword
 aria2
+lxinput
+lxappearance
+arandr
 #detox in aur might be useful: http://kmandla.wordpress.com/software/
 #dict in aur might be useful: http://kmandla.wordpress.com/software/
 #hnb in aur might be useful: http://kmandla.wordpress.com/software/
@@ -213,6 +220,8 @@ htop
 iftop
 surfraw
 xcompmgr
+xclip
+
 #xorg-xdm
 #xdm-archlinux
 #libxdg-basedir

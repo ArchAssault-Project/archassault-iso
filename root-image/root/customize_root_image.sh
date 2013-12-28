@@ -11,22 +11,22 @@ usermod -s /usr/bin/zsh root
 cp -aT /etc/skel/ /root/
 
 #commenting out for now, may need to set this up later
-#useradd -m -p "" -g users -G "adm,audio,floppy,log,network,rfkill,scanner,storage,optical,power,wheel" -s /usr/bin/zsh blackarch
+#useradd -m -p "" -g users -G "adm,audio,floppy,log,network,rfkill,scanner,storage,optical,power,wheel" -s /usr/bin/zsh archassault
 
 # Create the user directory for live session
-if [ ! -d /home/blackarch ]; then
-    mkdir /home/blackarch && chown -R blackarch:users /home/blackarch
+if [ ! -d /home/archassault ]; then
+    mkdir /home/archassault && chown -R archassault:users /home/archassault
 else
-    chown -R blackarch:users /home/blackarch
+    chown -R archassault:users /home/archassault
 fi
 
 # Copy files over to home
-cp -aT /etc/skel /home/blackarch
-chown -R blackarch:users /home/blackarch
-chmod 755 /home/blackarch/.xinitrc
+cp -aT /etc/skel /home/archassault
+chown -R archassault:users /home/archassault
+chmod 755 /home/archassault/.xinitrc
 
 #add entries for .xinitrc
-#sed -i 's/# exec gnome-session/exec gnome-session/' /home/blackarch/.xinitrc
+#sed -i 's/# exec gnome-session/exec gnome-session/' /home/archassault/.xinitrc
 
 chmod 750 /etc/sudoers.d
 chmod 440 /etc/sudoers.d/g_wheel
@@ -44,5 +44,5 @@ systemctl enable sshd
 #disable network interface names
 ln -s /dev/null /etc/udev/rules.d/80-net-name-slot.rules
 
-# set blackarch users password to reset at login
-#chage -d0 blackarch
+# set archassault users password to reset at login
+#chage -d0 archassault

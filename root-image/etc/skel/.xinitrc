@@ -11,41 +11,33 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
   unset f
 fi
 
-exec $1
+desktop=$1
 
 run_dwm(){
-  xsetroot -solid black &
+  hsetroot -fill /usr/share/wallpapers/ba_wallpaper.jpg &
   xcompmgr -c -f -D 5 &
   xautolock -time 10 -locker slock
   exec dwm
 }
 
 run_spectrmw(){
-  xsetroot -solid black &
+  hsetroot -fill /usr/share/wallpapers/ba_wallpaper.jpg &
   xcompmgr -c -f -D 5 &
   xautolock -time 10 -locker slock
   exec spectrmw
 }
 
-run_awesome(){
-  xautolock -time 10 -locker slock
-  exec awesome
-}
 
-run_ratpoison(){
-  # the black/white grid as background doesn't suit my taste.
-  xsetroot -solid black &
-  # ratpoison is compatible with xcompmgr! now you can have real transparency
-  xcompmgr -c -f -D 5 &
-  #fire up ratpoison!
-  exec ratpoison
-}
 
 run_openbox(){
   exec openbox-session
 }
 
-#exec gnome-session
-# exec startkde
-# exec startxfce4
-# ...or the Window Manager of your choice
+
+if [[ $desktop == dwm ]]; then
+      run_dwm
+elif [[ $desktop == spectrwm ]]; then
+      run_spectrwm
+else
+      run_openbox
+fi
