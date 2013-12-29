@@ -33,6 +33,7 @@ arch-wiki-lite
 colordiff
 moreutils
 pwgen
+vimpager
 
 # ArchAssault
 archassault
@@ -195,14 +196,12 @@ dmenu
 dwm
 tint2
 spectrwm
-ratpoison
-awesome
 feh
 clipit
 spacefm
 slock
 scrot
-xautolock
+zathura
 hsetroot
 xxkb
 apvlv
@@ -213,6 +212,10 @@ aria2
 lxinput
 lxappearance
 arandr
+bc
+calc
+galculator
+task
 #detox in aur might be useful: http://kmandla.wordpress.com/software/
 #dict in aur might be useful: http://kmandla.wordpress.com/software/
 #hnb in aur might be useful: http://kmandla.wordpress.com/software/
@@ -221,7 +224,7 @@ iftop
 surfraw
 xcompmgr
 xclip
-
+xscreensaver
 #xorg-xdm
 #xdm-archlinux
 #libxdg-basedir
@@ -249,8 +252,7 @@ wpa_actiond
 ethtool
 b43-fwcutter
 crda
-wicd
-wicd-gtk
+network-manager-applet
 macchanger
 netctl
 dhclient
@@ -281,6 +283,7 @@ xz
 lzop
 unrar
 cpio
+file-roller
 
 # Cryptography
 truecrypt
