@@ -16,14 +16,14 @@ desktop=$1
 run_dwm(){
   hsetroot -fill /usr/share/wallpapers/ba_wallpaper.jpg &
   xcompmgr -c -f -D 5 &
-  xautolock -time 10 -locker slock
+  xscreensaver --no-splash &
   exec dwm
 }
 
 run_spectrmw(){
   hsetroot -fill /usr/share/wallpapers/ba_wallpaper.jpg &
   xcompmgr -c -f -D 5 &
-  xautolock -time 10 -locker slock
+  xscreensaver --no-splash &
   exec spectrmw
 }
 

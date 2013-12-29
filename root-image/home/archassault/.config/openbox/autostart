@@ -1,10 +1,12 @@
+(sleep 3 && /usr/bin/nm-applet --sm-disable) &
 tint2 &
 volumeicon &
 #hsetroot -fill /usr/share/wallpapers/archbang-sky.png &
 xsetroot -solid black &
-xautolock -time 10 -locker slock
+xscreensaver --no-splash &
 clipit &
 conky &
+wicd-gtk &
 # Enable as required
 #compton -cCGb &
 xbacklight -set 100 &
