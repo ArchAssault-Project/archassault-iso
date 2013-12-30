@@ -38,6 +38,7 @@ vimpager
 # ArchAssault
 archassault
 aircrack-ng
+john
 gnu-netcat
 nmap
 wireshark-cli
@@ -77,6 +78,7 @@ zsh
 
 # Development
 base-devel
+ed
 python
 python2
 python2-geoip
@@ -136,6 +138,7 @@ mesa
 xorg-drivers
 xorg-xkill
 xorg-xbacklight
+xorg
 nouveau-dri
 intel-dri
 ati-dri
@@ -179,63 +182,9 @@ xfburn
 bashburn
 vlc
 
-# Window Manager Stuff
-openbox
-obconf
-obmenu
-oblogout
-obmenu-generator
-perl-linux-desktopfiles
-perl-data-dump
-scrot
-nitrogen
-openbox-themes
-dzen2
-conky
-dmenu
-dwm
-tint2
-spectrwm
-feh
-clipit
-spacefm
-slock
-scrot
-zathura
-hsetroot
-xxkb
-apvlv
-abiword
-zim
-antiword
-aria2
-lxinput
-lxappearance
-arandr
-bc
-calc
-galculator
-task
-#detox in aur might be useful: http://kmandla.wordpress.com/software/
-#dict in aur might be useful: http://kmandla.wordpress.com/software/
-#hnb in aur might be useful: http://kmandla.wordpress.com/software/
-htop
-iftop
-surfraw
-xcompmgr
-xclip
-xscreensaver
-#xorg-xdm
-#xdm-archlinux
-#libxdg-basedir
-#archlinux-xdg-menu
-#xdg-utils
-#xdg-user-dirs
-#python-xdg
-#python2-xdg
-#python2-dirspec
-slim
-slim-themes
+# GNOME -- Window Manager Stuff
+gnome
+gnome-extra
 
 # Xorg Extras
 cairo
@@ -296,9 +245,17 @@ gnupg
 # Fonts
 ttf-dejavu
 ttf-bitstream-vera
+ttf-freefont
+ttf-indic-otf
 terminus-font
 ttf-droid
 ttf-inconsolata
 ttf-liberation
 ttf-linux-libertine
 ttf-ubuntu-font-family
+xorg-fonts-100dpi
+xorg-fonts-75dpi
+xorg-fonts-type1
+ttf-droid
+ttf-inconsolata
+ttf-liberation
