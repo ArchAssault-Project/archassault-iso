@@ -54,7 +54,7 @@ mkdir -p --mode=755 /home/archassault/.compose-cache/
 chown -R archassault:users /home/archassault/.compose-cache
 
 #set default PDf viewer per https://wiki.archlinux.org/index.php/Kde#Default_PDF_viewer_in_GTK_applications_under_KDE
-sudo -H -n -u archassault -i 'xdg-mime default kde4-okularApplication_pdf.desktop application/pdf'
+#sudo -H -n -u archassault -i 'xdg-mime default kde4-okularApplication_pdf.desktop application/pdf'
 
 #set default icons for KDE to oxygen
 ln -sf /usr/share/icons/oxygen /usr/share/icons/default.kde4
