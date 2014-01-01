@@ -34,11 +34,12 @@ colordiff
 moreutils
 pwgen
 vimpager
+htop
+iftop
 
 # ArchAssault
 archassault
 aircrack-ng
-john
 gnu-netcat
 nmap
 wireshark-cli
@@ -64,6 +65,9 @@ parted
 partimage
 smartmontools
 testdisk
+smbclient
+libwbclient
+samba
 
 # Servers
 darkhttpd
@@ -153,6 +157,9 @@ virtualbox-host-modules
 alsa-firmware
 alsa-utils
 alsa-oss
+alsa-plugins
+alsa-tools
+pulseaudio-alsa
 volumeicon
 
 # Internet
@@ -185,12 +192,25 @@ vlc
 # GNOME -- Window Manager Stuff
 gnome
 gnome-extra
+gnome-tweak-tool
+gst-libav
+#gnome-shell-system-monitor-applet-git
+#gnome-shell-extension-weather-git
+#alacart
+seahorse
 
 # Xorg Extras
+apvlv
+abiword
+zim
+antiword
+xclip
+xscreensaver
 cairo
 fontconfig
 terminator
 rxvt-unicode
+scite
 
 # Network
 ipw2100-fw

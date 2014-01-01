@@ -36,13 +36,15 @@ sed -i 's/#\(Storage=\)auto/\1volatile/' /etc/systemd/journald.conf
 
 #start up systemctl processes
 #systemctl enable multi-user.target pacman-init.service choose-mirror.service
-systemctl disable multi-user.target
+systemctl disable multi-user.target sshd dhcpcd
 systemctl enable graphical.target pacman-init.service choose-mirror.service
-systemctl enable slim.service
-systemctl enable sshd
 
 #disable network interface names
 ln -s /dev/null /etc/udev/rules.d/80-net-name-slot.rules
+
+#create symlinks to wallpapers
+mkdir -p /usr/share/wallpapers/ArchAssault
+ln -s /usr/share/archassault-artwork/backgrounds/* /usr/share/wallpapers/ArchAssault
 
 # set archassault users password to reset at login
 #chage -d0 archassault

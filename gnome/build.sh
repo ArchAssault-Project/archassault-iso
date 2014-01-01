@@ -3,8 +3,9 @@
 set -e -u
 
 iso_name=archassault
+rev=0.1
 iso_label="archassault_$(date +%Y%m)"
-iso_version=$(date +%Y.%m.%d)
+iso_version=archassault-gnome-$(date +%Y.%m.%d)
 install_dir=arch
 arch=$(uname -m)
 work_dir=work
@@ -49,7 +50,12 @@ run_once() {
 make_pacman_conf() {
     local _cache_dirs
     _cache_dirs=($(pacman -v 2>&1 | grep '^Cache Dirs:' | sed 's/Cache Dirs:\s*//g'))
-    sed -r "s|^#?\\s*CacheDir.+|CacheDir = $(echo -n ${_cache_dirs[@]})|g" ${script_path}/pacman.conf > ${pacman_conf}
+    if [[ ${arch} == "x86_64" ]]; then
+        sed -r "s|^#?\\s*CacheDir.+|CacheDir = $(echo -n ${_cache_dirs[@]})|g" ${script_path}/pacman.x86_64.conf > ${pacman_conf}
+    else
+        sed -r "s|^#?\\s*CacheDir.+|CacheDir = $(echo -n ${_cache_dirs[@]})|g" ${script_path}/pacman.i686.conf > ${pacman_conf}
+    fi
+   # sed -r "s|^#?\\s*CacheDir.+|CacheDir = $(echo -n ${_cache_dirs[@]})|g" ${script_path}/pacman.conf > ${pacman_conf}
 }
 
 # Base installation, plus needed packages (root-image)
@@ -84,6 +90,13 @@ make_setup_mkinitcpio() {
 # Customize installation (root-image)
 make_customize_root_image() {
     cp -af ${script_path}/root-image ${work_dir}/${arch}
+    if [[ ${arch} == x86_64 ]]; then
+        rm ${work_dir}/${arch}/root-image/etc/pacman.i686.conf
+        mv ${work_dir}/${arch}/root-image/etc/pacman.x86_64.conf ${work_dir}/${arch}/root-image/etc/pacman.conf
+    else
+        rm ${work_dir}/${arch}/root-image/etc/pacman.x86_64.conf
+        mv ${work_dir}/${arch}/root-image/etc/pacman.i686.conf ${work_dir}/${arch}/root-image/etc/pacman.conf
+    fi
 
     curl -o ${work_dir}/${arch}/root-image/etc/pacman.d/mirrorlist 'https://www.archlinux.org/mirrorlist/?country=all&protocol=http&use_mirror_status=on'
 
@@ -126,7 +139,8 @@ make_syslinux() {
     mkdir -p ${work_dir}/iso/${install_dir}/boot/syslinux
     for _cfg in ${script_path}/syslinux/*.cfg; do
         sed "s|%ARCHISO_LABEL%|${iso_label}|g;
-             s|%INSTALL_DIR%|${install_dir}|g" ${_cfg} > ${work_dir}/iso/${install_dir}/boot/syslinux/${_cfg##*/}
+             s|%INSTALL_DIR%|${install_dir}|g;
+			 s|%ARCH%|${arch}|g" ${_cfg} > ${work_dir}/iso/${install_dir}/boot/syslinux/${_cfg##*/}
     done
     cp ${script_path}/syslinux/splash.png ${work_dir}/iso/${install_dir}/boot/syslinux
     cp ${work_dir}/${arch}/root-image/usr/lib/syslinux/bios/*.c32 ${work_dir}/iso/${install_dir}/boot/syslinux
@@ -255,16 +269,6 @@ done
 mkdir -p ${work_dir}
 
 run_once make_pacman_conf
-
-if [[ ${arch} == "x86_64" ]];
-then
-      #Add multilb to pacman.conf
-      echo "modifying pacman.conf..." 
-      echo "modifying pacman.conf..."
-      echo '[multilib]' >> ${pacman_conf}
-      echo 'Include = /etc/pacman.d/mirrorlist' >> ${pacman_conf}
-fi
-
 # Do all stuff for each root-image
 run_once make_basefs
 run_once make_packages
