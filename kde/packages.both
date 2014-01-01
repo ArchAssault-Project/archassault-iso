@@ -34,6 +34,11 @@ colordiff
 moreutils
 pwgen
 vimpager
+aria2
+bc
+htop
+iftop
+surfraw
 
 # ArchAssault
 archassault
@@ -63,6 +68,9 @@ parted
 partimage
 smartmontools
 testdisk
+smbclient
+libwbclient
+samba
 
 # Servers
 darkhttpd
@@ -150,6 +158,9 @@ virtualbox-host-modules
 alsa-firmware
 alsa-utils
 alsa-oss
+alsa-plugins
+alsa-tools
+pulseaudio-alsa
 volumeicon
 
 # Internet
@@ -180,68 +191,101 @@ bashburn
 vlc
 
 # Window Manager Stuff
-openbox
-obconf
-obmenu
-oblogout
-obmenu-generator
+kde
+kde-l10n-ar
+kde-l10n-bg
+kde-l10n-bs
+kde-l10n-ca
+kde-l10n-ca@valencia
+kde-l10n-cs
+kde-l10n-da
+kde-l10n-de
+kde-l10n-el
+kde-l10n-en_gb
+kde-l10n-es
+kde-l10n-et
+kde-l10n-eu
+kde-l10n-fi
+kde-l10n-fr
+kde-l10n-ga
+kde-l10n-gl
+kde-l10n-he
+kde-l10n-hi
+kde-l10n-hr
+kde-l10n-hu
+kde-l10n-ia
+kde-l10n-is
+kde-l10n-it
+kde-l10n-ja
+kde-l10n-kk
+kde-l10n-km
+kde-l10n-ko
+kde-l10n-lt
+kde-l10n-lv
+kde-l10n-mr
+kde-l10n-nb
+kde-l10n-nds
+kde-l10n-nl
+kde-l10n-nn
+kde-l10n-pa
+kde-l10n-pl
+kde-l10n-pt
+kde-l10n-pt_br
+kde-l10n-ro
+kde-l10n-ru
+kde-l10n-sk
+kde-l10n-sl
+kde-l10n-sr
+kde-l10n-sv
+kde-l10n-tr
+kde-l10n-ug
+kde-l10n-uk
+kde-l10n-vi
+kde-l10n-wa
+kde-l10n-zh_cn
+kde-l10n-zh_tw
+kdemultimedia-kmix
 perl-linux-desktopfiles
 perl-data-dump
 scrot
-nitrogen
-openbox-themes
-dzen2
 conky
-dmenu
-dwm
-tint2
-spectrwm
 feh
 clipit
-spacefm
-slock
-scrot
-zathura
-hsetroot
-xxkb
+#slock
+arandr
+slim
+slim-themes
+cairo-dock
+cairo-dock-plugins
+xscreensaver
+appmenu-qt
+smb4k
+kde-gtk-config
+kdeadmin-kcron
+kdegraphics-kamera
+phonon-vlc
+#phonon-gstreamer
+telepathy
+kde-telepathy-meta
+oxygen-gtk2
+oxygen-gtk3
+oxygen-icons
+kpartsplugin
+kscreen
+kdegraphics-gwenview
+
+# Xorg Extras
 apvlv
 abiword
 zim
 antiword
-aria2
-lxinput
-lxappearance
-arandr
-bc
-calc
-galculator
-task
-#detox in aur might be useful: http://kmandla.wordpress.com/software/
-#dict in aur might be useful: http://kmandla.wordpress.com/software/
-#hnb in aur might be useful: http://kmandla.wordpress.com/software/
-htop
-iftop
-surfraw
-xcompmgr
 xclip
 xscreensaver
-#xorg-xdm
-#xdm-archlinux
-#libxdg-basedir
-#archlinux-xdg-menu
-#xdg-utils
-#xdg-user-dirs
-#python-xdg
-#python2-xdg
-#python2-dirspec
-slim
-slim-themes
-
-# Xorg Extras
 cairo
 fontconfig
 terminator
 rxvt-unicode
+gimp
 
 # Network
 ipw2100-fw
@@ -269,6 +313,8 @@ rp-pppoe
 rsync
 speedtouch
 wget
+wicd
+wicd-gtk
 wvdial
 xl2tpd
 

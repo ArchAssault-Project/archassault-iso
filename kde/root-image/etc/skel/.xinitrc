@@ -11,33 +11,4 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
   unset f
 fi
 
-desktop=$1
-
-run_dwm(){
-  hsetroot -fill /usr/share/wallpapers/ba_wallpaper.jpg &
-  xcompmgr -c -f -D 5 &
-  xscreensaver --no-splash &
-  exec dwm
-}
-
-run_spectrmw(){
-  hsetroot -fill /usr/share/wallpapers/ba_wallpaper.jpg &
-  xcompmgr -c -f -D 5 &
-  xscreensaver --no-splash &
-  exec spectrmw
-}
-
-
-
-run_openbox(){
-  exec openbox-session
-}
-
-
-if [[ $desktop == dwm ]]; then
-      run_dwm
-elif [[ $desktop == spectrwm ]]; then
-      run_spectrwm
-else
-      run_openbox
-fi
+exec startkde
