@@ -91,10 +91,8 @@ make_setup_mkinitcpio() {
 make_customize_root_image() {
     cp -af ${script_path}/root-image ${work_dir}/${arch}
     if [[ ${arch} == x86_64 ]]; then
-        rm ${work_dir}/${arch}/root-image/etc/pacman.i686.conf
         mv ${work_dir}/${arch}/root-image/etc/pacman.x86_64.conf ${work_dir}/${arch}/root-image/etc/pacman.conf
     else
-        rm ${work_dir}/${arch}/root-image/etc/pacman.x86_64.conf
         mv ${work_dir}/${arch}/root-image/etc/pacman.i686.conf ${work_dir}/${arch}/root-image/etc/pacman.conf
     fi
 
@@ -230,7 +228,7 @@ make_prepare() {
     setarch ${arch} mkassaultiso ${verbose} -w "${work_dir}" -D "${install_dir}" prepare
     rm -rf ${work_dir}/root-image
     # rm -rf ${work_dir}/${arch}/root-image (if low space, this helps)
-}	
+}
 
 # Build ISO
 make_iso() {
