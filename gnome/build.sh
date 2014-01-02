@@ -2,10 +2,10 @@
 
 set -e -u
 
-iso_name=archassault
-rev=0.1
-iso_label="archassault_$(date +%Y%m)"
-iso_version=archassault-gnome-$(date +%Y.%m.%d)
+iso_name=ArchAssault
+rev="0.1"
+iso_label=$iso_name-$rev
+iso_version=-gnome-$(date +%Y.%m.%d)
 install_dir=arch
 arch=$(uname -m)
 work_dir=work
@@ -90,11 +90,6 @@ make_setup_mkinitcpio() {
 # Customize installation (root-image)
 make_customize_root_image() {
     cp -af ${script_path}/root-image ${work_dir}/${arch}
-    if [[ ${arch} == x86_64 ]]; then
-        mv ${work_dir}/${arch}/root-image/etc/pacman.x86_64.conf ${work_dir}/${arch}/root-image/etc/pacman.conf
-    else
-        mv ${work_dir}/${arch}/root-image/etc/pacman.i686.conf ${work_dir}/${arch}/root-image/etc/pacman.conf
-    fi
 
     curl -o ${work_dir}/${arch}/root-image/etc/pacman.d/mirrorlist 'https://www.archlinux.org/mirrorlist/?country=all&protocol=http&use_mirror_status=on'
 
