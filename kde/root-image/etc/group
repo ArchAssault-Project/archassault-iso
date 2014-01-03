@@ -47,4 +47,4 @@ postdrop:x:75:
 postfix:x:73:
 rtkit:x:133:
 kvm:x:78:
-blackarch:x:1005:
+archassault:x:1005:
