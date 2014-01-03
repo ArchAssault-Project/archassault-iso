@@ -37,6 +37,7 @@ sed -i 's/#\(Storage=\)auto/\1volatile/' /etc/systemd/journald.conf
 
 #start up systemctl processes
 #systemctl enable multi-user.target pacman-init.service choose-mirror.service
+systemctl disable multi-user.target
 systemctl enable gdm graphical.target pacman-init.service choose-mirror.service
 
 #disable network interface names
