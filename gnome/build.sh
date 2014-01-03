@@ -5,7 +5,7 @@ set -e -u
 iso_name=ArchAssault
 rev="0.1"
 iso_label=$iso_name-$rev
-iso_version=-gnome-$(date +%Y.%m.%d)
+iso_version=gnome-$(date +%Y.%m.%d)
 install_dir=arch
 arch=$(uname -m)
 work_dir=work
