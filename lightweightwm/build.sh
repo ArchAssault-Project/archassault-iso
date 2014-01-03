@@ -2,9 +2,10 @@
 
 set -e -u
 
-iso_name=archassault
-iso_label="archassault_$(date +%Y%m)"
-iso_version=$(date +%Y.%m.%d)
+iso_name=ArchAssault
+rev="0.1"
+iso_label=$iso_name-$rev
+iso_version=openbox-$(date +%Y.%m.%d)
 install_dir=arch
 arch=$(uname -m)
 work_dir=work
@@ -49,7 +50,12 @@ run_once() {
 make_pacman_conf() {
     local _cache_dirs
     _cache_dirs=($(pacman -v 2>&1 | grep '^Cache Dirs:' | sed 's/Cache Dirs:\s*//g'))
-    sed -r "s|^#?\\s*CacheDir.+|CacheDir = $(echo -n ${_cache_dirs[@]})|g" ${script_path}/pacman.conf > ${pacman_conf}
+    if [[ ${arch} == "x86_64" ]]; then
+        sed -r "s|^#?\\s*CacheDir.+|CacheDir = $(echo -n ${_cache_dirs[@]})|g" ${script_path}/pacman.x86_64.conf > ${pacman_conf}
+    else
+        sed -r "s|^#?\\s*CacheDir.+|CacheDir = $(echo -n ${_cache_dirs[@]})|g" ${script_path}/pacman.i686.conf > ${pacman_conf}
+    fi
+   # sed -r "s|^#?\\s*CacheDir.+|CacheDir = $(echo -n ${_cache_dirs[@]})|g" ${script_path}/pacman.conf > ${pacman_conf}
 }
 
 # Base installation, plus needed packages (root-image)
@@ -126,7 +132,8 @@ make_syslinux() {
     mkdir -p ${work_dir}/iso/${install_dir}/boot/syslinux
     for _cfg in ${script_path}/syslinux/*.cfg; do
         sed "s|%ARCHISO_LABEL%|${iso_label}|g;
-             s|%INSTALL_DIR%|${install_dir}|g" ${_cfg} > ${work_dir}/iso/${install_dir}/boot/syslinux/${_cfg##*/}
+             s|%INSTALL_DIR%|${install_dir}|g;
+			 s|%ARCH%|${arch}|g" ${_cfg} > ${work_dir}/iso/${install_dir}/boot/syslinux/${_cfg##*/}
     done
     cp ${script_path}/syslinux/splash.png ${work_dir}/iso/${install_dir}/boot/syslinux
     cp ${work_dir}/${arch}/root-image/usr/lib/syslinux/bios/*.c32 ${work_dir}/iso/${install_dir}/boot/syslinux
@@ -216,7 +223,7 @@ make_prepare() {
     setarch ${arch} mkassaultiso ${verbose} -w "${work_dir}" -D "${install_dir}" prepare
     rm -rf ${work_dir}/root-image
     # rm -rf ${work_dir}/${arch}/root-image (if low space, this helps)
-}	
+}
 
 # Build ISO
 make_iso() {
@@ -255,15 +262,6 @@ done
 mkdir -p ${work_dir}
 
 run_once make_pacman_conf
-
-if [[ ${arch} == "x86_64" ]];
-then
-      #Add multilb to pacman.conf
-      echo "modifying pacman.conf..." 
-      echo "modifying pacman.conf..."
-      echo '[multilib]' >> ${pacman_conf}
-      echo 'Include = /etc/pacman.d/mirrorlist' >> ${pacman_conf}
-fi
 
 # Do all stuff for each root-image
 run_once make_basefs
