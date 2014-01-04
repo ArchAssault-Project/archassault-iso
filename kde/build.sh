@@ -2,9 +2,10 @@
 
 set -e -u
 
-iso_name=archassault
-iso_label="archassault_$(date +%Y%m)"
-iso_version=kde-beta-0.1-1.$(date +%Y.%m.%d)
+iso_name=ArchAssault
+rev="0.1"
+iso_label=$iso_name-$rev
+iso_version=kde-$(date +%Y.%m.%d)
 install_dir=arch
 arch=$(uname -m)
 work_dir=work
@@ -90,14 +91,6 @@ make_setup_mkinitcpio() {
 make_customize_root_image() {
     cp -af ${script_path}/root-image ${work_dir}/${arch}
 
-    if [[ ${arch} == x86_64 ]]; then
-        rm ${work_dir}/${arch}/root-image/etc/pacman.i686.conf
-        mv ${work_dir}/${arch}/root-image/etc/pacman.x86_64.conf ${work_dir}/${arch}/root-image/etc/pacman.conf
-    else
-        rm ${work_dir}/${arch}/root-image/etc/pacman.x86_64.conf
-        mv ${work_dir}/${arch}/root-image/etc/pacman.i686.conf ${work_dir}/${arch}/root-image/etc/pacman.conf
-    fi
-
     curl -o ${work_dir}/${arch}/root-image/etc/pacman.d/mirrorlist 'https://www.archlinux.org/mirrorlist/?country=all&protocol=http&use_mirror_status=on'
 
     lynx -dump -nolist 'https://wiki.archlinux.org/index.php/Installation_Guide?action=render' >> ${work_dir}/${arch}/root-image/root/install.txt
@@ -132,7 +125,6 @@ make_pkgcache() {
 		wget -P ${work_dir}/${arch}/root-image/var/cache/pacman/pkg ${pkg_path}.sig
     done
 }
-
 
 # Prepare /${install_dir}/boot/syslinux
 make_syslinux() {
@@ -230,7 +222,7 @@ make_prepare() {
     setarch ${arch} mkassaultiso ${verbose} -w "${work_dir}" -D "${install_dir}" prepare
     rm -rf ${work_dir}/root-image
     # rm -rf ${work_dir}/${arch}/root-image (if low space, this helps)
-}	
+}
 
 # Build ISO
 make_iso() {

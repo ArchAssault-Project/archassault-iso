@@ -34,11 +34,8 @@ colordiff
 moreutils
 pwgen
 vimpager
-aria2
-bc
 htop
 iftop
-surfraw
 
 # ArchAssault
 archassault
@@ -47,6 +44,39 @@ gnu-netcat
 nmap
 wireshark-cli
 wireshark-gtk
+tcpreplay
+stunnel
+socat
+sleuthkit
+siege
+rkhunter
+proxytunnel
+proxychains
+ophcrack
+ngrep
+nbtscan
+mtr
+macchanger
+kismet
+john
+jad
+iputils
+iodine
+hping
+gdb
+fping
+extundelete
+exiv2
+ettercap
+etherape
+dsniff
+dnstracer
+ddrescue
+dcfldd
+darkstat
+cadaver
+bsdiff
+arp-scan
 
 # Filesystems
 btrfs-progs
@@ -85,6 +115,7 @@ zsh
 
 # Development
 base-devel
+ed
 python
 python2
 python2-geoip
@@ -94,7 +125,7 @@ mercurial
 cmake
 emacs
 gvim
-vim
+#vim
 scite
 geany
 geany-plugins
@@ -144,6 +175,7 @@ mesa
 xorg-drivers
 xorg-xkill
 xorg-xbacklight
+xorg
 nouveau-dri
 intel-dri
 ati-dri
@@ -190,8 +222,10 @@ xfburn
 bashburn
 vlc
 
-# Window Manager Stuff
+# KDE - Window Manager Stuff
 kde
+#kdebase-workspace -> KDM
+kdebase-workspace
 kde-l10n-ar
 kde-l10n-bg
 kde-l10n-bs
@@ -253,8 +287,6 @@ feh
 clipit
 #slock
 arandr
-slim
-slim-themes
 cairo-dock
 cairo-dock-plugins
 xscreensaver
@@ -264,7 +296,7 @@ kde-gtk-config
 kdeadmin-kcron
 kdegraphics-kamera
 phonon-vlc
-#phonon-gstreamer
+phonon-gstreamer
 telepathy
 kde-telepathy-meta
 oxygen-gtk2
@@ -285,7 +317,6 @@ cairo
 fontconfig
 terminator
 rxvt-unicode
-gimp
 
 # Network
 ipw2100-fw
@@ -296,7 +327,14 @@ wpa_actiond
 ethtool
 b43-fwcutter
 crda
-network-manager-applet
+networkmanager
+#network-manager-applet -> GNOME NetworkManager GUI
+#kdeplasma-applets-plasma-nm -> KDE NetworkManager GUI
+kdeplasma-applets-plasma-nm
+networkmanager-openconnect
+networkmanager-openvpn
+networkmanager-pptp
+networkmanager-vpnc
 macchanger
 netctl
 dhclient
@@ -313,10 +351,9 @@ rp-pppoe
 rsync
 speedtouch
 wget
-wicd
-wicd-gtk
 wvdial
 xl2tpd
+kvpnc
 
 # Archive Tools
 unace
@@ -342,9 +379,17 @@ gnupg
 # Fonts
 ttf-dejavu
 ttf-bitstream-vera
+ttf-freefont
+ttf-indic-otf
 terminus-font
 ttf-droid
 ttf-inconsolata
 ttf-liberation
 ttf-linux-libertine
 ttf-ubuntu-font-family
+xorg-fonts-100dpi
+xorg-fonts-75dpi
+xorg-fonts-type1
+ttf-droid
+ttf-inconsolata
+ttf-liberation
