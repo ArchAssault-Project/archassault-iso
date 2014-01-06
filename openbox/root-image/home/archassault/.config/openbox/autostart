@@ -1,11 +1,10 @@
-(sleep 3 && /usr/bin/nm-applet --sm-disable) &
 tint2 &
 volumeicon &
 #hsetroot -fill /usr/share/wallpapers/archbang-sky.png &
 xsetroot -solid black &
 xscreensaver --no-splash &
 clipit &
-conky &
+/usr/bin/VBoxClient-all&
 wicd-gtk &
 # Enable as required
 #compton -cCGb &
