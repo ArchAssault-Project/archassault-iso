@@ -1,10 +1,17 @@
 #!/bin/sh
-
 #
-# ~/.xsession
+# ~/.xinitrc
 #
-# Executed by xdm/gdm/kdm at login
-#
+# Executed by startx (run your window manager from here)
 
-/bin/bash --login -i ~/.xinitrc
+if [ -d /etc/X11/xinit/xinitrc.d ]; then
+  for f in /etc/X11/xinit/xinitrc.d/*; do
+    [ -x "$f" ] && . "$f"
+  done
+  unset f
+fi
 
+# exec gnome-session
+exec startkde
+# exec startxfce4
+# ...or the Window Manager of your choice

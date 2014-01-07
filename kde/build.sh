@@ -269,7 +269,7 @@ run_once make_customize_root_image
 run_once make_boot
 # Do all stuff for "iso"
 run_once make_boot_extra
-run_once make_pkgcache
+#run_once make_pkgcache
 run_once make_syslinux
 run_once make_isolinux
 
