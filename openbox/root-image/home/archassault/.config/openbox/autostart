@@ -1,9 +1,8 @@
 tint2 &
 volumeicon &
-#hsetroot -fill /usr/share/wallpapers/archbang-sky.png &
-xsetroot -solid black &
+hsetroot -fill archassault-redbackground-1024x768.jpg &
 xscreensaver --no-splash &
-clipit &
+clipit  -d &
 /usr/bin/VBoxClient-all&
 wicd-gtk &
 # Enable as required
