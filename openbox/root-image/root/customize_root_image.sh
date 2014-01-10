@@ -33,7 +33,7 @@ sed -i 's/#\(Storage=\)auto/\1volatile/' /etc/systemd/journald.conf
 
 #Adding in our pacman.conf
 if [[ ${__arch} == i686 ]]; then
-      cat <<- _EOF  > /etc/pacman.conf
+      cat - > /etc/pacman.conf <<'EOF'
 #
 # /etc/pacman.conf
 #
@@ -89,8 +89,8 @@ LocalFileSigLevel = Optional
 #   - local/custom mirrors can be added here or in separate files
 #   - repositories listed first will take precedence when packages
 #     have identical names, regardless of version number
-#   - URLs will have \$repo replaced by the name of the current repo
-#   - URLs will have \$arch replaced by the name of the architecture
+#   - URLs will have $repo replaced by the name of the current repo
+#   - URLs will have $arch replaced by the name of the architecture
 #
 # Repository entries are of the format:
 #       [repo-name]
@@ -122,11 +122,11 @@ Include = /etc/pacman.d/mirrorlist
 
 [archassault-testing]
 SigLevel = Optional
-Server = http://s3-us-west-2.amazonaws.com/archassault/\$repo/os/\$arch
+Server = http://s3-us-west-2.amazonaws.com/archassault/$repo/os/$arch
 
 #[archassault]
 #SigLevel = Optional
-#Server = repo.archassault.org/archassault/\$repo/os/\$arch
+#Server = repo.archassault.org/archassault/$repo/os/$arch
 
 # An example of a custom package repository.  See the pacman manpage for
 # tips on creating your own repositories.
@@ -134,9 +134,9 @@ Server = http://s3-us-west-2.amazonaws.com/archassault/\$repo/os/\$arch
 #SigLevel = Optional TrustAll
 #Server = file:///home/custompkgs
 
-_EOF
+EOF
 else
-     cat <<- _EOF  > /etc/pacman.conf
+     cat - > /etc/pacman.conf <<'EOF'
 #
 # /etc/pacman.conf
 #
@@ -192,8 +192,8 @@ LocalFileSigLevel = Optional
 #   - local/custom mirrors can be added here or in separate files
 #   - repositories listed first will take precedence when packages
 #     have identical names, regardless of version number
-#   - URLs will have \$repo replaced by the name of the current repo
-#   - URLs will have \$arch replaced by the name of the architecture
+#   - URLs will have $repo replaced by the name of the current repo
+#   - URLs will have $arch replaced by the name of the architecture
 #
 # Repository entries are of the format:
 #       [repo-name]
@@ -228,11 +228,11 @@ Include = /etc/pacman.d/mirrorlist
 
 [archassault-testing]
 SigLevel = Optional
-Server = http://s3-us-west-2.amazonaws.com/archassault/\$repo/os/\$arch
+Server = http://s3-us-west-2.amazonaws.com/archassault/$repo/os/$arch
 
 #[archassault]
 #SigLevel = Optional
-#Server = repo.archassault.org/archassault/\$repo/os/\$arch
+#Server = repo.archassault.org/archassault/$repo/os/$arch
 
 # An example of a custom package repository.  See the pacman manpage for
 # tips on creating your own repositories.
@@ -240,7 +240,7 @@ Server = http://s3-us-west-2.amazonaws.com/archassault/\$repo/os/\$arch
 #SigLevel = Optional TrustAll
 #Server = file:///home/custompkgs
 
-_EOF
+EOF
 fi
 
 #start up systemctl processes
