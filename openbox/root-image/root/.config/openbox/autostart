@@ -1,12 +1,12 @@
 tint2 &
 volumeicon &
-#hsetroot -fill /usr/share/wallpapers/archbang-sky.png &
+nitrogen --set-scaled /usr/share/wallpapers/archassault-redbackground-1024x768.jpg &
 clipit &
-conky &
+wicd-gtk &
 # Enable as required
-#compton -cCGb &
+xcompmgr -c -C -t-5 -l-5 -r4.2 -o.55 &
 xbacklight -set 100 &
 VBoxClient-all &
 #/usr/bin/synclient TouchpadOff=1 &
-#xxkb &
+xxkb &
 spacefm -d &

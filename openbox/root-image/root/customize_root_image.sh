@@ -18,7 +18,7 @@ fi
 
 # Copy files over to home
 cp -aT /etc/skel /home/archassault
-chown archassault:users /home/archassault/.*
+chown -R archassault:users /home/archassault/.*
 chmod 755 /home/archassault/.xinitrc
 usermod -aG adm,audio,floppy,video,log,network,rfkill,scanner,storage,optical,power,wheel archassault
 

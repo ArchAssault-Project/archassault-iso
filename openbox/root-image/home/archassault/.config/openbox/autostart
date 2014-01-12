@@ -1,11 +1,12 @@
 tint2 &
 volumeicon &
-hsetroot -fill archassault-redbackground-1024x768.jpg &
+nitrogen --set-scaled /usr/share/wallpapers/archassault-redbackground-1024x768.jpg &
 xscreensaver --no-splash &
 clipit  -d &
-/usr/bin/VBoxClient-all&
+/usr/bin/VBoxClient-all &
 wicd-gtk &
 # Enable as required
+xcompmgr -c -C -t-5 -l-5 -r4.2 -o.55 &
 #compton -cCGb &
 xbacklight -set 100 &
 #/usr/bin/synclient TouchpadOff=1 &

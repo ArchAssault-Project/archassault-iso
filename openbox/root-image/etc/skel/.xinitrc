@@ -14,14 +14,12 @@ fi
 desktop=$1
 
 run_dwm(){
-  hsetroot -fill /usr/share/wallpapers/ba_wallpaper.jpg &
   xcompmgr -c -f -D 5 &
   xscreensaver --no-splash &
   exec dwm
 }
 
 run_spectrmw(){
-  hsetroot -fill /usr/share/wallpapers/ba_wallpaper.jpg &
   xcompmgr -c -f -D 5 &
   xscreensaver --no-splash &
   exec spectrmw
@@ -30,7 +28,7 @@ run_spectrmw(){
 
 
 run_openbox(){
-  exec openbox-session
+  exec dbus-launch --exit-with-session openbox
 }
 
 
