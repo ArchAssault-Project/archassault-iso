@@ -28,7 +28,7 @@ run_spectrmw(){
 
 
 run_openbox(){
-  exec dbus-launch --exit-with-session openbox
+  exec openbox-session
 }
 
 

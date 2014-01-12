@@ -196,7 +196,7 @@ pulseaudio-alsa
 volumeicon
 
 # Internet
-chromium
+#chromium  removing for now might add back later
 firefox
 pidgin
 pidgin-otr
@@ -242,6 +242,7 @@ spectrwm
 feh
 clipit
 spacefm
+pcmanfm
 slock
 scrot
 zathura
@@ -257,24 +258,15 @@ lxappearance
 arandr
 bc
 calc
+gmrun
 galculator
 task
-#detox in aur might be useful: http://kmandla.wordpress.com/software/
-#dict in aur might be useful: http://kmandla.wordpress.com/software/
-#hnb in aur might be useful: http://kmandla.wordpress.com/software/
+perl-file-mimeinfo
 surfraw
 xcompmgr
 xclip
 xscreensaver
-#xorg-xdm
-#xdm-archlinux
-#libxdg-basedir
-#archlinux-xdg-menu
-#xdg-utils
-#xdg-user-dirs
-#python-xdg
-#python2-xdg
-#python2-dirspec
+xdg-user-dirs
 slim
 slim-themes
 
