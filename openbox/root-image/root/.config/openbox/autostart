@@ -1,7 +1,7 @@
 tint2 &
 volumeicon &
 nitrogen --set-scaled /usr/share/wallpapers/archassault-redbackground-1024x768.jpg &
-clipit &
+clipit -d &
 wicd-gtk &
 # Enable as required
 xcompmgr -c -C -t-5 -l-5 -r4.2 -o.55 &
