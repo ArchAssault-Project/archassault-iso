@@ -11,6 +11,17 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
   unset f
 fi
 
+## Where the default Home folders have not already been created, generate them
+
+if [ -x /usr/bin/xdg-user-dirs-update ]; then
+   /usr/bin/xdg-user-dirs-update
+fi
+
+## Ensure that obmenu-generator (a pipe menu) is set to the user.
+
+#sed 's/_user_/'$(whoami)'/' ~/.config/obmenu-generator/schema.pl -i
+sed 's/_user_/'$(whoami)'/' ~/.config/obmenu-generator/config.pl -i
+
 desktop=$1
 
 run_dwm(){
