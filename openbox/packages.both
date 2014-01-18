@@ -242,7 +242,6 @@ spectrwm
 feh
 clipit
 spacefm
-pcmanfm
 slock
 scrot
 zathura
@@ -258,7 +257,6 @@ lxappearance
 arandr
 bc
 calc
-gmrun
 galculator
 task
 perl-file-mimeinfo
