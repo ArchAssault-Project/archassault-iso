@@ -13,6 +13,7 @@ linux-atm
 tzdata
 usb_modeswitch
 reflector
+archassault-keyring
 
 # Console Apps
 gpm
@@ -125,7 +126,6 @@ mercurial
 cmake
 emacs
 gvim
-vim
 scite
 geany
 geany-plugins

@@ -120,13 +120,13 @@ Include = /etc/pacman.d/mirrorlist
 [community]
 Include = /etc/pacman.d/mirrorlist
 
-[archassault-testing]
-SigLevel = Optional
-Server = http://s3-us-west-2.amazonaws.com/archassault/$repo/os/$arch
+#[archassault-testing]
+#SigLevel = Required DatabaseOptional TrustedOnly
+#Server = http://repo.archassautl.org/archassault/$repo/os/$arch
 
-#[archassault]
-#SigLevel = Optional
-#Server = repo.archassault.org/archassault/$repo/os/$arch
+[archassault]
+SigLevel = Required DatabaseOptional TrustedOnly
+Server = http://repo.archassault.org/archassault/$repo/os/$arch
 
 # An example of a custom package repository.  See the pacman manpage for
 # tips on creating your own repositories.
@@ -226,13 +226,13 @@ Include = /etc/pacman.d/mirrorlist
 [multilib]
 Include = /etc/pacman.d/mirrorlist
 
-[archassault-testing]
-SigLevel = Optional
-Server = http://s3-us-west-2.amazonaws.com/archassault/$repo/os/$arch
+#[archassault-testing]
+#SigLevel = Required DatabaseOptional TrustedOnly
+#Server = http://repo.archassault.org/archassault/$repo/os/$arch
 
-#[archassault]
-#SigLevel = Optional
-#Server = repo.archassault.org/archassault/$repo/os/$arch
+[archassault]
+SigLevel = Required DatabaseOptional TrustedOnly
+Server = http://repo.archassault.org/archassault/$repo/os/$arch
 
 # An example of a custom package repository.  See the pacman manpage for
 # tips on creating your own repositories.

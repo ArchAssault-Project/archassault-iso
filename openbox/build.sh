@@ -70,6 +70,7 @@ make_packages() {
           # remove gcc-libs to avoid conflict with gcc-libs-multilib
           setarch ${arch} mkassaultiso ${verbose} -w "${work_dir}/${arch}" -C "${pacman_conf}" -D "${install_dir}" -r "pacman -Rdd --noconfirm gcc-libs" run
     fi
+          setarch ${arch} mkassaultiso ${verbose} -w "${work_dir}/${arch}" -C "${pacman_conf}" -D "${install_dir}" -r "pacman -Rdd --noconfirm cryptsetup" run
           setarch ${arch} mkassaultiso ${verbose} -w "${work_dir}/${arch}" -C "${pacman_conf}" -D "${install_dir}" -p "$(grep -h -v ^# ${script_path}/packages.{both,${arch}})" install
 }
 
