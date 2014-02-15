@@ -4,7 +4,7 @@
 # git has its own built in compression methods
 *.iso
 
-
+BAD
 
 # OS generated files #
 ######################
